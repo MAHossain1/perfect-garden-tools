@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home/Home";
-import MyProfile from "./pages/MyProfile/MyProfile";
+import MyPortfolio from "./pages/MyPortfolio.js/MyPortfolio";
 import Navbar from "./pages/Shared/Navbar";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="myprofile" element={<MyProfile />} />
+        <Route path="/myportfolio" element={<MyPortfolio />} />
       </Routes>
     </div>
   );
