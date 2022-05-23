@@ -1,0 +1,56 @@
+[
+  {
+    "_id": 1,
+    "image": "https://i.ibb.co/r0k7JVD/tool1.jpg",
+    "name": "Water Nozzle",
+    "description": "A nozzle is the spout at the end of a hose that water flows through. Any kind of fluid — oil, gasoline — can move through a tube and squirt out of a nozzle, but we usually think of water in a hose, with the nozzle controlling the spray.",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  },
+  {
+    "_id": 2,
+    "image": "https://i.ibb.co/r4cMq8g/tool2.jpg",
+    "name": "Hoe Fork",
+    "description": "This sturdy fork features a forged steel head that easily penetrates firm soil. Just pull or raise the handle to stir and aerate the soil, or use this tool to remove weeds and their roots. ",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  },
+  {
+    "_id": 3,
+    "image": "https://i.ibb.co/QFHqh8c/tool3.jpg",
+    "name": "Shovel",
+    "description": "Shovel is a tool used to dig as well as to move loose, granular materials like dirt, gravel, grain, or snow from one spot to another. Spade is a tool used for digging straight-edged holes or trenches, slicing and lifting sod, and edging flower beds or lawns.",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  },
+  {
+    "_id": 4,
+    "image": "https://i.ibb.co/5vSXfXX/tool4.jpg",
+    "name": "Rakes",
+    "description": "A rake is a garden tool consisting of a row of metal or wooden teeth attached to a long handle. You can use a rake to make the earth smooth and level before you put plants in, or to gather leaves together.",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  },
+  {
+    "_id": 5,
+    "image": "https://i.ibb.co/KLjYGBt/tool5.jpg",
+    "name": "Small Tools",
+    "description": "For carrying out various horticultural operations, one needs different kinds of tools and equipment, such as hand cultivator, harrow, spade, secateurs, hand trowel, garden fork, sprinklers, rake, pruning saw, spray pumps, grass shear, budding and grafting knives, etc.",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  },
+  {
+    "_id": 6,
+    "image": "https://i.ibb.co/1X9DhgZ/tool6.jpg",
+    "name": "Spades",
+    "description": "A hand cultivator or short-handled hand tiller can also be very useful for those with raised bed gardens. Since the soil is generally less compacted in raised beds, you don't usually need to till quite as deeply. A smaller tool will do the job admirably",
+    "available_quantity": 1000,
+    "minumum_order": 100,
+    "price": 10
+  }
+]

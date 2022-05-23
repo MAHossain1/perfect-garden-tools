@@ -1,20 +1,21 @@
 import React from "react";
+import Button from "../Shared/Button";
 
-const Tool = () => {
+const Tool = ({ tool }) => {
+  const { name, image, description, price } = tool;
   return (
-    <div className="card w-96 bg-base-100 shadow-xl">
+    <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
-        <img
-          src="https://api.lorem.space/image/shoes?w=400&h=225"
-          alt="Shoes"
-          className="rounded-xl"
-        />
+        <img src={image} alt="tool_agriculture" className="rounded-xl" />
       </figure>
       <div className="card-body items-center text-center">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">{tool.name}</h2>
+        <p>{tool.description}</p>
+        <p>Available Quantity: {tool.available_quantity}</p>
+        <p>Minimum Order: {tool.minumum_order}</p>
+        <p className="font-bold">Price: ${tool.price} per unit</p>
         <div className="card-actions">
-          <button className="btn btn-primary">Buy Now</button>
+          <Button>Purchase</Button>
         </div>
       </div>
     </div>
