@@ -50,9 +50,11 @@ const SignUp = () => {
   };
   return (
     <div className="flex h-screen justify-center items-center">
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
-          <h2 class="text-center text-primary text-3xl font-bold">Sign Up</h2>
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
+          <h2 className="text-center text-primary text-3xl font-bold">
+            Sign Up
+          </h2>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
               <label className="label">
@@ -77,14 +79,14 @@ const SignUp = () => {
                 )}
               </label>
             </div>
-            <div class="form-control w-full max-w-xs">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Your Email"
-                class="input input-bordered w-full max-w-xs"
+                className="input input-bordered w-full max-w-xs"
                 {...register("email", {
                   required: {
                     value: true,
@@ -158,10 +160,10 @@ const SignUp = () => {
             </small>
           </p>
 
-          <div class="divider">OR</div>
+          <div className="divider">OR</div>
           <button
             onClick={() => signInWithGoogle()}
-            class="btn btn-outline btn-primary"
+            className="btn btn-outline btn-primary"
           >
             Sign In with Google
           </button>
