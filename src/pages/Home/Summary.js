@@ -1,14 +1,9 @@
 import React from "react";
-import {
-  CashIcon,
-  UserGroupIcon,
-  ReviewIcon,
-  ThumbUpIcon,
-} from "@heroicons/react/solid";
+import { CashIcon, UserGroupIcon, ThumbUpIcon } from "@heroicons/react/solid";
 
 const Summary = () => {
   return (
-    <div>
+    <div className="my-20">
       <div className="text-center">
         <h1 className="text-primary text-3xl font-bold">
           Helping Millions Grow Better
