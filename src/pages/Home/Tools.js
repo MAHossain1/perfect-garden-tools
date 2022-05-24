@@ -1,11 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
+import { ToolContext } from "../../App";
 import Tool from "./Tool";
 
 const Tools = () => {
-  const [tools, setTools] = useState([]);
+  const [tools, setTools] = useContext(ToolContext);
 
   useEffect(() => {
-    fetch("tools.json")
+    fetch("http://localhost:5000/tool")
       .then(res => res.json())
       .then(data => setTools(data));
   }, []);
