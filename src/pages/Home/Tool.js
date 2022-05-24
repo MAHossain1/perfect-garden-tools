@@ -13,6 +13,11 @@ const Tool = ({ tool }) => {
     price,
     _id,
   } = tool;
+
+  const navigateToPurchase = id => {
+    navigate(`/tool/${id}`);
+  };
+
   return (
     <div className="card lg:max-w-lg bg-base-100 shadow-xl">
       <figure className="px-10 pt-10">
@@ -26,7 +31,7 @@ const Tool = ({ tool }) => {
         <p className="font-bold">Price: ${price} per unit</p>
         <div className="card-actions">
           <button
-            onClick={() => navigate(`/purchase/${_id}`)}
+            onClick={() => navigateToPurchase(_id)}
             className="btn btn-primary text-white font-bold bg-gradient-to-r from-secondary to-primary"
           >
             Purchase

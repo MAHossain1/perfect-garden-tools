@@ -1,13 +1,11 @@
 import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { ToolContext } from "../../App";
+import useToolDetail from "../hooks/useToolDetail";
 
 const Purchase = () => {
-  const { id } = useParams();
-  const [tools] = useContext(ToolContext);
-
-  const tool = tools.find(tool => tool._id == id);
-  console.log(tool);
+  const { toolId } = useParams();
+  const [tool] = useToolDetail(toolId);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
@@ -72,28 +70,6 @@ const Purchase = () => {
         </div>
       </div>
     </div>
-
-    // <div className="blog-details">
-    //   <div className="blog-image">
-    //     <img src={tool?.image} alt="" />
-    //   </div>
-    //   <h1>{tool?.name}</h1>
-    //   <p>{tool?.description}</p>
-    //   {/*class="hero min-h-screen bg-base-200" <div class="hero-content text-center">
-    //     <div class="max-w-md">
-    //       <img src={tool.image} alt="" />
-
-    //       <h1 class="text-3xl font-bold">{tool?.name}</h1>
-    //       <p class="py-4">{tool.description}</p>
-    //       <p>{tool.available_quantity}</p>
-    //       <b>
-    //         <p>{tool.price}</p>
-    //       </b>
-    //       <button class="btn btn-primary">Get Started</button>
-    //     </div>
-    //   </div> */}
-
-    // </div>
   );
 };
 
