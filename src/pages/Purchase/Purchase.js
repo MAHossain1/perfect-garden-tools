@@ -1,11 +1,36 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
-import { ToolContext } from "../../App";
+import auth from "../../firebase.init";
 import useToolDetail from "../hooks/useToolDetail";
 
 const Purchase = () => {
   const { toolId } = useParams();
   const [tool] = useToolDetail(toolId);
+  const [user] = useAuthState(auth);
+  const [quantity, setQuantity] = useState(100);
+  const [error, setError] = useState("");
+
+  const handleDecrement = () => {
+    if (quantity > 100) {
+      setQuantity(quantity - 1);
+      setError(
+        <p className="text-primary">Thank you for your selecting decision</p>
+      );
+    } else {
+      setQuantity(100);
+      setError(<p className="text-red-500">You've to Order minimum 100pcs</p>);
+    }
+  };
+  const handleIncrement = () => {
+    if (quantity >= 1000) {
+      setError(
+        <p className="text-red-500">Please select under available items</p>
+      );
+    } else {
+      setQuantity(quantity + 1);
+    }
+  };
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
@@ -32,6 +57,9 @@ const Purchase = () => {
           <div class="form-control">
             <input
               type="text"
+              value={user?.displayName || user?.name}
+              required
+              disabled
               placeholder="Name"
               class="input input-bordered"
             />
@@ -39,6 +67,9 @@ const Purchase = () => {
           <div class="form-control">
             <input
               type="text"
+              value={user?.email}
+              required
+              disabled
               placeholder="Your Email"
               class="input input-bordered"
             />
@@ -46,6 +77,7 @@ const Purchase = () => {
           <div class="form-control">
             <input
               type="text"
+              required
               placeholder="Phone Number"
               class="input input-bordered"
             />
@@ -53,16 +85,42 @@ const Purchase = () => {
           <div class="form-control">
             <input
               type="text"
+              required
               placeholder="Address"
               class="input input-bordered"
             />
           </div>
-          <h2 className="text-xl">
+          <h2 className="text-xl text-center">
             Available Quantity: {tool.available_quantity}
           </h2>
-          <h2>
+          <p h2 className="text-x text-center">
+            Minimum Order: {tool.minumum_order}
+          </p>
+          <h2 className="text-center">
             <b>Price: ${tool.price} per unit</b>
           </h2>
+          <div className="flex justify-center mt-5">
+            <div>
+              <div className="input-group">
+                <button
+                  type="button"
+                  onClick={handleDecrement}
+                  className="mr-5 btn btn-outline btn-primary"
+                >
+                  -
+                </button>
+                <div className="form-control text-center">{quantity}</div>
+                <button
+                  type="button"
+                  onClick={handleIncrement}
+                  className="ml-5 btn btn-outline btn-primary"
+                >
+                  +
+                </button>
+              </div>
+              {error}
+            </div>
+          </div>
 
           <div class="form-control mt-6">
             <button class="btn btn-primary">Order Now</button>
