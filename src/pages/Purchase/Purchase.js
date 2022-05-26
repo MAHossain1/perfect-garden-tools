@@ -24,7 +24,7 @@ const Purchase = () => {
       customer: user.email,
       phone: event.target.phone.value,
     };
-    fetch("http://localhost:5000/purchasing", {
+    fetch("https://frozen-ocean-66144.herokuapp.com/purchasing", {
       method: "POST",
       headers: {
         "content-type": "application/json",

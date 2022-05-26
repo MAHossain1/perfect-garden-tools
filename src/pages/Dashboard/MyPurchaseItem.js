@@ -8,7 +8,7 @@ const MyPurchaseItem = () => {
 
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:5000/purchasing=${user.email}`)
+      fetch(`https://frozen-ocean-66144.herokuapp.com/purchasing=${user.email}`)
         .then(res => res.json())
         .then(data => setPurchasedItem(data));
     }

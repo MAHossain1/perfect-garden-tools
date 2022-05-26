@@ -4,7 +4,7 @@ const useToolDetail = toolId => {
   const [tool, setTool] = useState({});
 
   useEffect(() => {
-    const url = `http://localhost:5000/tool/${toolId}`;
+    const url = `https://frozen-ocean-66144.herokuapp.com/tool/${toolId}`;
 
     fetch(url)
       .then(res => res.json())
