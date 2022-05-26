@@ -17,6 +17,7 @@ import AddReview from "./pages/Dashboard/AddReview";
 import MyProfile from "./pages/Dashboard/MyProfile";
 import Footer from "./pages/Shared/Footer";
 import NotFound from "./pages/Shared/NotFound";
+import Blog from "./pages/Blog/Blog";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         </Route>
 
         <Route path="/myportfolio" element={<MyPortfolio />} />
+        <Route path="/blog" element={<Blog />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<NotFound></NotFound>}></Route>
