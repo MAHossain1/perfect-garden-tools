@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer class="footer items-center p-4 bg-primary text-white">
+    <footer class="footer static bottom-0 items-center p-4 bg-primary text-white">
       <div class="items-center grid-flow-col">
         <svg
           width="36"
