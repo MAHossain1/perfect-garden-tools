@@ -3,16 +3,16 @@ import safety from "../../images/safety/raised-bed.png";
 
 const SafetyGardening = () => {
   return (
-    <div class="hero min-h-screen bg-white">
-      <div class="hero-content flex-col lg:flex-row">
+    <div className="hero min-h-screen bg-white">
+      <div className="hero-content flex-col lg:flex-row">
         <img
           src={safety}
-          class="max-w-sm rounded-lg shadow-2xl"
+          className="max-w-sm rounded-lg shadow-2xl"
           alt="safety_img"
         />
         <div>
-          <h1 class="text-5xl font-bold">
-            Top-14 Gardening Safety Tips for Everyone
+          <h1 className="text-5xl font-bold">
+            Top-14 Gardening Safety Tips htmlFor Everyone
           </h1>
           <p className="text-3xl py-5">Our amazing gardening safety guides</p>
           <p className="text-xl">
@@ -32,7 +32,7 @@ const SafetyGardening = () => {
               easily.
             </li>
             <li>
-              <b>Use the tools safely:</b> Must use the right tools for the
+              <b>Use the tools safely:</b> Must use the right tools htmlFor the
               right job and keep them in the right place. Always try to keep
               them away from children. Some garden power tools are very sharp.
               You have to use them carefully. If you are using electric tools,
@@ -45,7 +45,7 @@ const SafetyGardening = () => {
               not lose your energy and can finish them smoothly
             </li>
           </ul>
-          <button class="btn btn-outline btn-primary">Read More...</button>
+          <button className="btn btn-outline btn-primary">Read More...</button>
         </div>
       </div>
     </div>

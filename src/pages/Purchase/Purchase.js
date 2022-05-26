@@ -44,7 +44,9 @@ const Purchase = () => {
     if (quantity > 100) {
       setQuantity(quantity - 1);
       setError(
-        <p className="text-primary">Thank you for your selecting decision</p>
+        <p className="text-primary">
+          Thank you htmlFor your selecting decision
+        </p>
       );
     } else {
       setQuantity(100);
@@ -63,13 +65,13 @@ const Purchase = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5">
-      <div class="card lg:max-w-lg  bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card lg:max-w-lg  bg-base-100 shadow-xl">
+        <div className="card-body">
           <h2 className="text-center text-3xl font-bold text-primary">
             Product Details
           </h2>
-          <h2 class="card-title">Item Name: {tool?.name}</h2>
-          <p class="py-4">
+          <h2 className="card-title">Item Name: {tool?.name}</h2>
+          <p className="py-4">
             <b>Description:</b> {tool?.description}
           </p>
         </div>
@@ -78,46 +80,46 @@ const Purchase = () => {
         </figure>
       </div>
       <div className="card lg:max-w-lg  bg-base-100 shadow-xl">
-        <form onSubmit={handlePurchasing} class="card-body">
+        <form onSubmit={handlePurchasing} className="card-body">
           <h2 className="text-center text-3xl font-bold text-primary">
-            Order Form
+            Order htmlForm
           </h2>
 
-          <div class="form-control">
+          <div className="form-control">
             <input
               type="text"
               value={user?.displayName || user?.name}
               required
               disabled
               placeholder="Name"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control">
+          <div className="form-control">
             <input
               type="text"
               value={user?.email}
               required
               disabled
               placeholder="Your Email"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control">
+          <div className="form-control">
             <input
               type="text"
               name="phone"
               required
               placeholder="Phone Number"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
-          <div class="form-control">
+          <div className="form-control">
             <input
               type="text"
               required
               placeholder="Address"
-              class="input input-bordered"
+              className="input input-bordered"
             />
           </div>
           <h2 className="text-xl text-center">
@@ -152,9 +154,9 @@ const Purchase = () => {
             </div>
           </div>
 
-          <div class="form-control mt-6">
+          <div className="form-control mt-6">
             <input
-              class="btn btn-primary"
+              className="btn btn-primary"
               type="submit"
               value="Confirm Purchase"
             />

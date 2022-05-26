@@ -16,7 +16,7 @@ const MyPurchaseItem = () => {
 
   return (
     <div>
-      <h2>My Purchase Item {purchasedItem.length}</h2>
+      <h2>My Purchase Item </h2>
     </div>
   );
 };

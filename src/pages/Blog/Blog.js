@@ -49,9 +49,9 @@ const Blog = () => {
       <br />
 
       <h2 className="text-x font-bold">
-        4. Why you do not set the state directly in React. For example, if you
-        have const [products, setProducts] = useState([]). Why you do not set
-        products = [...] instead, you use the setProducts
+        4. Why you do not set the state directly in React. htmlFor example, if
+        you have const [products, setProducts] = useState([]). Why you do not
+        set products = [...] instead, you use the setProducts
       </h2>
       <p>
         {" "}

@@ -8,7 +8,9 @@ const OrderQuantity = () => {
     if (quantity > 100) {
       setQuantity(quantity - 1);
       setError(
-        <p className="text-primary">Thank you for your selecting decision</p>
+        <p className="text-primary">
+          Thank you htmlFor your selecting decision
+        </p>
       );
     } else {
       setQuantity(100);
