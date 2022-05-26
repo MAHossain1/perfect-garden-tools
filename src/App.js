@@ -9,6 +9,12 @@ import SignUp from "./pages/Login/SignUp";
 import MyPortfolio from "./pages/MyPortfolio.js/MyPortfolio";
 import Purchase from "./pages/Purchase/Purchase";
 import Navbar from "./pages/Shared/Navbar";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import MyPurchaseItem from "./pages/Dashboard/MyPurchaseItem";
+import AddReview from "./pages/Dashboard/AddReview";
+import MyProfile from "./pages/Dashboard/MyProfile";
 
 function App() {
   return (
@@ -16,6 +22,7 @@ function App() {
       <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/tool/:toolId" element={<ProceedPurchase />} />
         <Route
           path="/purchase/:toolId"
@@ -25,10 +32,24 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth>
+              <Dashboard />
+            </RequireAuth>
+          }
+        >
+          <Route index element={<MyPurchaseItem></MyPurchaseItem>}></Route>
+          <Route path="review" element={<AddReview></AddReview>}></Route>
+          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+        </Route>
+
         <Route path="/myportfolio" element={<MyPortfolio />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

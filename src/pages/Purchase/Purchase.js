@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import useToolDetail from "../hooks/useToolDetail";
 
@@ -10,6 +11,34 @@ const Purchase = () => {
   const [user] = useAuthState(auth);
   const [quantity, setQuantity] = useState(100);
   const [error, setError] = useState("");
+
+  const handlePurchasing = event => {
+    event.preventDefault();
+
+    const purchasing = {
+      toolId: tool._id,
+      tool: tool.name,
+      price: tool.price,
+      quantity: quantity,
+      customerName: user.displayName,
+      customer: user.email,
+      phone: event.target.phone.value,
+    };
+    fetch("http://localhost:5000/purchasing", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(purchasing),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.success) {
+          toast(`${quantity} of this ${tool.name} is purchased by you!`);
+        }
+      });
+  };
 
   const handleDecrement = () => {
     if (quantity > 100) {
@@ -49,7 +78,7 @@ const Purchase = () => {
         </figure>
       </div>
       <div className="card lg:max-w-lg  bg-base-100 shadow-xl">
-        <div class="card-body">
+        <form onSubmit={handlePurchasing} class="card-body">
           <h2 className="text-center text-3xl font-bold text-primary">
             Order Form
           </h2>
@@ -77,6 +106,7 @@ const Purchase = () => {
           <div class="form-control">
             <input
               type="text"
+              name="phone"
               required
               placeholder="Phone Number"
               class="input input-bordered"
@@ -123,9 +153,13 @@ const Purchase = () => {
           </div>
 
           <div class="form-control mt-6">
-            <button class="btn btn-primary">Order Now</button>
+            <input
+              class="btn btn-primary"
+              type="submit"
+              value="Confirm Purchase"
+            />
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
