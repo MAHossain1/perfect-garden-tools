@@ -13,7 +13,7 @@ const SignIn = () => {
 
   const {
     register,
-    htmlFormState: { errors },
+    formState: { errors },
     handleSubmit,
   } = useForm();
 
