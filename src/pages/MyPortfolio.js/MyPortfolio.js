@@ -7,7 +7,7 @@ const MyPortfolio = () => {
     <div className="about">
       <img src={arman} alt="" />
       <h3>
-        <b>Name:</b> Md. Arman Hossain
+        <b>Name:</b> Md. Arman Hossain Arman
       </h3>
       <h2>
         <b>Email:</b> armanhossain2034@gmail.com
